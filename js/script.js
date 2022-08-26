@@ -66,7 +66,14 @@ getRandomQuote()
 
 
 // `printQuote` function
+
+// This makes the quote change at 2500ms
 //setInterval(printQuote, 2500)
+
+setInterval(function(){
+  printQuote();
+  randomBackgroundColor();
+}, 2000)
 
 function printQuote(){
   let printedQuote = getRandomQuote()
@@ -112,7 +119,8 @@ printQuote()
 
 //Random Backround Colors
 
-let colors = ["#2F52E0", "#BCED090", "#F9CB40", "#FF715B", "#4C5B5C", "#2DC7FF", "#48E5C2", "#48E5C2"]
+let colors = ["#2F52E0", "#BCED090", "#4C5B5C", "#2DC7FF", "#283044", "#FF0054", "#6457A6",
+"#DA4167", "#297373", "#152614", '#463F3A', '#F26157', '#582630', '#23967F']
 
 function randomBackgroundColor(){
   let colorRange = colors.length;
@@ -122,7 +130,7 @@ function randomBackgroundColor(){
   //console.log(randomHex)
 
   let randomColor = colors[randomHex]
-  //console.log(randomColor)
+  console.log(randomColor)
   //return randomColor
   let randomColorString = randomColor.toString()
   //console.log(randomColorString)
