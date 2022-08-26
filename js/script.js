@@ -12,27 +12,31 @@ project 1 - A Random Quote Generator
 
 let quotes = [
   {
-    quote: "fdsfdsfd",
-    source: '123',
+    quote: "Feet, what do I need you for when I have wings to fly?",
+    source: 'New Yorker',
     citation: '963',
-    year: 2002
+    year: 2002,
+    tags: 'humor'
   },
   {
-    quote: "fdsfjndks",
-    source: "456"
+    quote: "At the end of the day, we can endure much more than we think we can.",
+    source: "Frida Kahlo"
 
   },
   {
-    quote: "fdfsdfs",
-    source: "789"
+    quote: "It is better to light a candle than curse the darkness.",
+    source: "Eleanor Roosevelt",
+    citation: '1933',
+    year: 1933,
+    tags: 'Famous Women'
   },
   {
-    quote: "fdfsdfsd",
-    source: "741"
+    quote: "Always know your merit and how special you are, and don’t let someone else’s qualifications make you feel small. If you stick to this, you will always deserve their respect.",
+    source: "Whitney Wolfe Herd"
   },
   {
-    quote: "fdfdsf",
-    source: "852"
+    quote: "All sorts of things can happen when you’re open to new ideas and playing around with things.",
+    source: "Stephanie Kwolek"
   }
 
 ];
@@ -60,6 +64,7 @@ getRandomQuote()
 
 // `printQuote` function
 
+
 function printQuote(){
   let printedQuote = getRandomQuote()
   console.log(printedQuote)
@@ -71,6 +76,8 @@ function printQuote(){
   console.log(citationProperty)
   let yearProperty = printedQuote.year
   console.log(yearProperty)
+  let tagsProperty = printedQuote.tags
+  console.log(tagsProperty)
   
   let htmlString = `
   <p class = "quote"> ${quoteProperty}  </p>
@@ -79,10 +86,13 @@ function printQuote(){
   console.log(htmlString)
 
   if(printedQuote.hasOwnProperty('citation')){
-    return htmlString += `<span class = "citation"> ${citationProperty} </span> `
+     htmlString += `<span class = "citation"> ${citationProperty} </span> `
   }
   if(printedQuote.hasOwnProperty('year')){
-    return htmlString += `<span class = "year"> ${yearProperty} </span>`
+     htmlString += `<span class = "year"> ${yearProperty} </span>`
+  }
+  if(printedQuote.hasOwnProperty('tags')){
+     htmlString += `<span class = "tags"> ${tagsProperty} </span>`
   }
   //console.log(htmlString)
   htmlString += `</p>`
@@ -92,7 +102,33 @@ function printQuote(){
 }
 printQuote()
 
+//Random Backround Colors
 
+let colors = ["#2F52E0", "#BCED090", "#F9CB40", "#FF715B", "#4C5B5C", "#2DC7FF", "#48E5C2", "#48E5C2"]
+
+function randomBackgroundColor(){
+  let colorRange = colors.length;
+  //console.log(colorRange)
+
+  let randomHex = Math.floor(Math.random() * colorRange)
+  //console.log(randomHex)
+
+  let randomColor = colors[randomHex]
+  //console.log(randomColor)
+  //return randomColor
+  let randomColorString = randomColor.toString()
+  //console.log(randomColorString)
+  document.body.style.backgroundColor = randomColorString;
+}
+randomBackgroundColor()
+
+
+//AutoRefreshed Quotes
+// function autoRefreshQuotes(){
+//   setInterval(document.getElementById("quote-box").innerHTML = htmlString, 1000)
+
+// }
+// autoRefreshQuotes()
 
 
 /***
