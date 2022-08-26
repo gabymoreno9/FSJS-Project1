@@ -13,10 +13,12 @@ project 1 - A Random Quote Generator
 let quotes = [
   {
     quote: "Feet, what do I need you for when I have wings to fly?",
-    source: 'New Yorker',
-    citation: '963',
+    source: 'Frida Kahlo',
+    citation: 'Book',
     year: 2002,
-    tags: 'humor'
+    tags: 'inspiration',
+    timeline: "1907 - 1954" 
+
   },
   {
     quote: "At the end of the day, we can endure much more than we think we can.",
@@ -26,9 +28,10 @@ let quotes = [
   {
     quote: "It is better to light a candle than curse the darkness.",
     source: "Eleanor Roosevelt",
-    citation: '1933',
+    citation: 'Twitter',
     year: 1933,
-    tags: 'Famous Women'
+    tags: 'Famous Women',
+    timeline: "1884 - 1962" 
   },
   {
     quote: "Always know your merit and how special you are, and don’t let someone else’s qualifications make you feel small. If you stick to this, you will always deserve their respect.",
@@ -63,7 +66,7 @@ getRandomQuote()
 
 
 // `printQuote` function
-setInterval(printQuote, 2500)
+//setInterval(printQuote, 2500)
 
 function printQuote(){
   let printedQuote = getRandomQuote()
@@ -78,6 +81,8 @@ function printQuote(){
   //console.log(yearProperty)
   let tagsProperty = printedQuote.tags
   //console.log(tagsProperty)
+  let timelineProperty = printedQuote.timeline
+  //console.log(timelineProperty)
   
   let htmlString = `
   <p class = "quote"> ${quoteProperty}  </p>
@@ -94,6 +99,9 @@ function printQuote(){
   if(printedQuote.hasOwnProperty('tags')){
      htmlString += `<span class = "tags"> ${tagsProperty} </span>`
   }
+  if(printedQuote.hasOwnProperty('timeline')){
+    htmlString += `<span class = "timeline"> ${timelineProperty} </span>`
+ }
   //console.log(htmlString)
   htmlString += `</p>`
   console.log(htmlString)
