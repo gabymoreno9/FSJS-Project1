@@ -63,27 +63,27 @@ getRandomQuote()
 
 
 // `printQuote` function
-
+setInterval(printQuote, 2500)
 
 function printQuote(){
   let printedQuote = getRandomQuote()
-  console.log(printedQuote)
+  //console.log(printedQuote)
   let quoteProperty = printedQuote.quote
-  console.log(quoteProperty)
+  //console.log(quoteProperty)
   let sourceProperty = printedQuote.source
-  console.log(sourceProperty)
+  //console.log(sourceProperty)
   let citationProperty = printedQuote.citation
-  console.log(citationProperty)
+  //console.log(citationProperty)
   let yearProperty = printedQuote.year
-  console.log(yearProperty)
+  //console.log(yearProperty)
   let tagsProperty = printedQuote.tags
-  console.log(tagsProperty)
+  //console.log(tagsProperty)
   
   let htmlString = `
   <p class = "quote"> ${quoteProperty}  </p>
   <p class = "source"> ${sourceProperty}  
   `
-  console.log(htmlString)
+  //console.log(htmlString)
 
   if(printedQuote.hasOwnProperty('citation')){
      htmlString += `<span class = "citation"> ${citationProperty} </span> `
