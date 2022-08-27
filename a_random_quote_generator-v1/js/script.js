@@ -8,8 +8,7 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 
- // `quotes` array 
-
+ // START `quotes` array 
 let quotes = [
   {
     quote: "Feet, what do I need you for when I have wings to fly?",
@@ -46,9 +45,7 @@ let quotes = [
 //console.log(quotes)
 //console.log("hello")
 
-
-//`getRandomQuote` function
-
+// START `getRandomQuote` function
 function getRandomQuote() {
   let range = quotes.length;
   //console.log(range)
@@ -60,21 +57,14 @@ function getRandomQuote() {
   //console.log(randomQuote)
   return randomQuote
 }
-getRandomQuote()
+// getRandomQuote()
 
 
+// START `printQuote` function
+// This makes the quote change at 20 seconds
+setInterval(printQuote, 20000)
 
-
-// `printQuote` function
-
-// This makes the quote change at 2500ms
-//setInterval(printQuote, 2500)
-
-setInterval(function(){
-  printQuote();
-  randomBackgroundColor();
-}, 2000)
-
+//this gets a random quote object and displays it on the page
 function printQuote(){
   let printedQuote = getRandomQuote()
   //console.log(printedQuote)
@@ -111,17 +101,18 @@ function printQuote(){
  }
   //console.log(htmlString)
   htmlString += `</p>`
-  console.log(htmlString)
+  //console.log(htmlString)
   document.getElementById('quote-box').innerHTML = htmlString; 
 
+  randomBackgroundColor();
 }
-printQuote()
 
-//Random Backround Colors
 
+//Random Background Colors
 let colors = ["#2F52E0", "#BCED090", "#4C5B5C", "#2DC7FF", "#283044", "#FF0054", "#6457A6",
 "#DA4167", "#297373", "#152614", '#463F3A', '#F26157', '#582630', '#23967F']
 
+//sets the background color to a random color chosen from the colors array
 function randomBackgroundColor(){
   let colorRange = colors.length;
   //console.log(colorRange)
@@ -130,21 +121,13 @@ function randomBackgroundColor(){
   //console.log(randomHex)
 
   let randomColor = colors[randomHex]
-  console.log(randomColor)
+  //console.log(randomColor)
   //return randomColor
   let randomColorString = randomColor.toString()
   //console.log(randomColorString)
   document.body.style.backgroundColor = randomColorString;
 }
-randomBackgroundColor()
-
-
-//AutoRefreshed Quotes
-// function autoRefreshQuotes(){
-//   setInterval(document.getElementById("quote-box").innerHTML = htmlString, 1000)
-
-// }
-// autoRefreshQuotes()
+// randomBackgroundColor()
 
 
 /***
