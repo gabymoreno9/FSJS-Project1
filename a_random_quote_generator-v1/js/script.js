@@ -7,6 +7,7 @@ project 1 - A Random Quote Generator
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
+//I'd like to get graded for exceeds expectations. Please reject if does not exceed expectations.
 
  // START `quotes` array 
 let quotes = [
